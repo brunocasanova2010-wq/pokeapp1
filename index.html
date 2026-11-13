@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokeApp · Pokédex interactiva</title>
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Tipografía tipo pixel para la estética retro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       1) HEADER  (la barra de arriba que se ve en todas las vistas)
+       ============================================================ -->
+  <header class="header">
+    <a href="#inicio" class="header__logo" data-ir="inicio">
+      <span class="pokeball-mini"></span>
+      <span>Poke<span>App</span></span>
+    </a>
+
+    <!-- Navegación: los enlaces los maneja JavaScript con addEventListener -->
+    <nav class="header__nav" id="navPrincipal">
+      <a href="#inicio"   data-ir="inicio">Inicio</a>
+      <a href="#pokedex"  data-ir="pokedex">Pokédex</a>
+      <a href="#batalla"  data-ir="batalla">Batalla</a>
+      <a href="#carga"    data-ir="carga" class="solo-admin" hidden>Cargar Pokémon</a>
+    </nav>
+
+    <!-- Zona de usuario: cambia según haya sesión iniciada o no -->
+    <div class="header__user" id="zonaUsuario"></div>
+
+    <button class="header__menu" id="btnMenu" aria-label="Abrir menú">☰</button>
+  </header>
+
+  <!-- ============================================================
+       2) CONTENEDOR PRINCIPAL
+          Todas las vistas se dibujan ADENTRO de este <main>.
+       ============================================================ -->
+  <main id="app" class="app"></main>
+
+  <!-- ============================================================
+       3) PIE DE PÁGINA
+       ============================================================ -->
+  <footer class="footer">
+    <p>PokeApp · Trabajo Práctico 9 · Funcionamiento de los Sistemas Digitales</p>
+    <p class="footer__mini">HTML5 + CSS3 + JavaScript · Datos guardados con JSON y localStorage</p>
+  </footer>
+
+  <!-- Aviso flotante (toast) que usamos para mensajes rápidos -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- El script principal es un MÓDULO (type="module") para poder usar import / export -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
